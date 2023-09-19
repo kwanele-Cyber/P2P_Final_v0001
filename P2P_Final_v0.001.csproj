@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -156,6 +164,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DBModels\Booking.cs" />
+    <Compile Include="DBModels\CarListing.cs" />
+    <Compile Include="DBModels\CarOwner.cs" />
+    <Compile Include="DBModels\Insurance.cs" />
+    <Compile Include="DBModels\LocationGeoData.cs" />
+    <Compile Include="DBModels\LogsAuditTrail.cs" />
+    <Compile Include="DBModels\Model1.cs" />
+    <Compile Include="DBModels\Payment.cs" />
+    <Compile Include="DBModels\Renter.cs" />
+    <Compile Include="DBModels\ReviewRating.cs" />
+    <Compile Include="DBModels\User.cs" />
+    <Compile Include="DBModels\UserRole.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
