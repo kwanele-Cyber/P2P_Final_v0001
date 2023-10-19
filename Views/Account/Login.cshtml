@@ -1,0 +1,72 @@
+﻿@model P2P_Final_v0._001.Models.Account
+@{
+    ViewBag.Title = "Login";
+    Layout = "";
+}
+<link href="~/Bundle/css/bootstrap.min.css" rel="stylesheet" />
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                     class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+                @if (ViewBag.Message != null)
+                {
+                    <div class="form-group mb-4">
+                        <div class="col-md-10 text-danger">
+                            @ViewBag.Message
+                        </div>
+                    </div>
+                }
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <!-- Email input -->
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                            <label class="form-check-label" for="form1Example3"> Remember me </label>
+                        </div>
+                        <a href="#!">Forgot password?</a>
+                    </div>
+
+                    <!-- Submit button -->
+                    <div class="m-2">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                    </div>
+                    <div class="form-group">
+                        Don't have an account?
+                        <a href="@Url.Action("RenterSignUp","Account")">SignUp as a Renter</a>
+                        <p>OR <a href="@Url.Action("OwnerSignUp","Account")" style="color: #0ad4f8}">SignUp as a car owner</a></p>
+
+                    </div>
+
+
+
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/assets/bootstrap.bundle.min.js"></script>

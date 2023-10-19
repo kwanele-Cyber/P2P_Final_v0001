@@ -1,0 +1,133 @@
+﻿@model P2P_Final_v0._001.Models.Account
+
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "";
+}
+
+<html>
+<head>
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/Bundle/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Bundle/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="~/Bundle/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Bundle/css/style.css" rel="stylesheet" />
+    <link href="~/Bundle/css/profile.css" rel="stylesheet" />
+
+</head>
+<body>
+    <section class="h-100 gradient-custom-2">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-9 col-xl-7">
+                    <div class="card">
+                        <div class="rounded-top-2 text-white d-flex flex-row m-2" style="background-color: #1C1E32; height: 200px;">
+                            <div class="ms-4 mt-5 d-flex flex-column" style="widivh: 150px;">
+                                <img src="@Model.ProfilePic" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                     alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                                     style="widivh: 150px; height:150px; z-index: 1">
+                                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+                                        style="z-index: 1;">
+                                    @Html.ActionLink("Edit", "Edit", new { @id = Model.AccountID})
+                                </button>
+                                
+                            </div>
+                            <div class="ml-5" style="margin-top: 130px;">
+                                <h5>@Model.Name</h5>
+                                <p>City</p>
+                            </div>
+                        </div>
+                        <div class="p-4 text-black" style="background-color: #f8f9fa;">
+                            <div class="d-flex justify-content-end text-center py-1">
+                                <div>
+                                    <p class="mb-1 h5">@Model.GetCarListing()</p>
+                                    <p class="small text-muted mb-0">Cars Listed</p>
+                                </div>
+                                <div class="px-3">
+                                    <p class="mb-1 h5">@Model.GetCarsRented()</p>
+                                    <p class="small text-muted mb-0">Cars Rented</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="card-body p-4 text-black">
+                            <div class="mb-5">
+                                <p class="lead fw-normal mb-1">About</p>
+                                <div class="p-4" style="background-color: #f8f9fa;">
+                                    <div>
+                                        @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name, new { @class = "font-italic mb-1" })
+                                    </div>
+
+                                    <div>
+                                        @Html.DisplayNameFor(model => model.Surname): @Html.DisplayFor(model => model.Surname, new { @class = "font-italic mb-1" })
+                                    </div>
+
+                                    <div>
+                                        @Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email, new { @class = "font-italic mb-1" })
+                                    </div>
+
+                                    <div>
+                                        @Html.DisplayNameFor(model => model.CellphoneNumber): @Html.DisplayFor(model => model.CellphoneNumber, new { @class = "font-italic mb-1" })
+                                    </div>
+
+                                    <div>
+                                        @Html.DisplayNameFor(model => model.Username): @Html.DisplayFor(model => model.Username, new { @class = "font-italic mb-1" })
+                                    </div>
+
+                                    @*Removed Password*@
+
+                                    <div>
+                                        @Html.DisplayNameFor(model => model.DateOfBirth): @Html.DisplayFor(model => model.DateOfBirth, new { @class = "font-italic mb-1" })
+                                    </div>
+
+                                    <div>
+                                        @Html.DisplayNameFor(model => model.AccountType): @Html.DisplayFor(model => model.AccountType, new { @class = "font-italic mb-1" })
+                                    </div>
+                                </div>
+                            </div>
+                            @if (Model.AccountType != P2P_Final_v0._001.Models.Account.Account_Type.Renter)
+                            {
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <p class="lead fw-normal mb-0">Car Listings</p>
+                                    <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col mb-2">
+                                        <img src="~/Bundle/img/gallery-3.jpg"
+                                             alt="image 1" class="w-100 rounded-3">
+                                    </div>
+                                    <div class="col mb-2">
+                                        <img src="~/Bundle/img/gallery-2.jpg"
+                                             alt="image 1" class="w-100 rounded-3">
+                                    </div>
+                                </div>
+                                <div class="row g-2">
+                                    <div class="col">
+                                        <img src="~/Bundle/img/gallery-1.jpg"
+                                             alt="image 1" class="w-100 rounded-3">
+                                    </div>
+                                    <div class="col">
+                                        <img src="~/Bundle/img/gallery-4.jpg"
+                                             alt="image 1" class="w-100 rounded-3">
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

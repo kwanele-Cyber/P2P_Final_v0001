@@ -1,0 +1,181 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="~/Bundle/css/admin.css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="hero navbar navbar-expand-lg bg-body-tertiary rounded-4">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#">SnapDrive</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <box-icon name='menu'></box-icon>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="@Url.Action("Index","Admin")"><box-icon name='Renter-alt-2'></box-icon>Home</a>
+                    <a class="nav-link" href="@Url.Action("Cars","Admin")"><box-icon name='car'></box-icon>Cars</a>
+                    <a class="nav-link" href="@Url.Action("Customers","Admin")"><box-icon name='user-circle'></box-icon>Customers</a>
+                    <a class="nav-link" href="@Url.Action("Rentals","Admin")"><box-icon name='user-circle'></box-icon>Rentals</a>
+                    <a class="nav-link " href="@Url.Action("Returns","Admin")"><box-icon name='map'></box-icon>Returns</a>
+                </div>
+                <a class="btn btn btn-primary shadow-none">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody();
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <footer class="bg-dark-gradient footer rounded-top-5">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-border-bottom pb-6 mb-5">
+                    @*<div class="row">
+                        <div class="col-lg-4 col-xl-3">
+                            <h4 class="text-white">
+                                Sign up to Get Latest Updates
+                            </h4>
+                        </div>
+                        <div class="col-lg-4 col-xl-6">
+                            <form class="d-flex flex-row mb-2 p-1 bg-white input-group">
+                                <input type="email" class="form-control rounded-0 border-0" placeholder="you@yoursite.com">
+                                <button class="btn btn-secondary rounded-0 flex-shrink-0" type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                        <div class="col-lg-4 col-xl-3">
+                            <div class="text-lg-end text-white">
+                                <span class="h6">Call Us On</span><br>
+                                <span class="h3">1-800-222-000</span>
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3 my-4">
+                        <div class="mb-4">
+                            <img src="static/img/logo-light.svg" title="" alt="">
+                        </div>
+                        <div class="text-white-65 mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</div>
+                        <div class="nav footer-socila-icon">
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-2 my-4">
+                        <h5 class="text-white h6 mb-4">Customer</h5>
+                        <ul class="list-unstyled white-link footer-links">
+                            <li>
+                                <a href="#">Get Corpo</a>
+                            </li>
+                            <li>
+                                <a href="#">Documentation</a>
+                            </li>
+                            <li>
+                                <a href="#">Help center</a>
+                            </li>
+                            <li>
+                                <a href="#">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-lg-2 my-4">
+                        <h5 class="text-white h6 mb-4">Product</h5>
+                        <ul class="list-unstyled white-link footer-links">
+                            <li>
+                                <a href="#">Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#">Join our team</a>
+                            </li>
+                            <li>
+                                <a href="#">Elements</a>
+                            </li>
+                            <li>
+                                <a href="#">Products</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-lg-2 my-4">
+                        <h5 class="text-white h6 mb-4">Company</h5>
+                        <ul class="list-unstyled white-link footer-links">
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Careers</a>
+                            </li>
+                            <li>
+                                <a href="#">Legal &amp; Security</a>
+                            </li>
+                            <li>
+                                <a href="#">Terms of use</a>
+                            </li>
+                            <li>
+                                <a href="#">We're hiring!</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 my-4">
+                        <h5 class="text-white h6 mb-4">Company</h5>
+                        <div class="white-link">
+                            <div class="d-flex pb-3">
+                                <div class="avatar avatar-lg rounded">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" title="" alt="">
+                                </div>
+                                <div class="col ps-3">
+                                    <small class="text-white-65">29 March 2021</small>
+                                    <h6 class="font-w-500 h6 m-0"><a class="text-white" href="#">Markdown Language Sample Blog Post Styling</a></h6>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="avatar avatar-lg rounded">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" title="" alt="">
+                                </div>
+                                <div class="col ps-3">
+                                    <small class="text-white-65">29 March 2021</small>
+                                    <h6 class="font-w-500 h6 m-0"><a class="text-white" href="#">Markdown Language Sample Blog Post Styling</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom footer-border-top light py-3">
+            <div class="container text-center">
+                <p class="m-0">© 2021 copyright <a href="#" class="text-reset">Snapdrive</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

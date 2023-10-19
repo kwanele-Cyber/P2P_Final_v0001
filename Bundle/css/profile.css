@@ -1,0 +1,21 @@
+﻿:root {
+    --primary: #F77D0A;
+    --secondary: #2B2E4A;
+    --light: #F4F5F8;
+    --dark: #1C1E32;
+}
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #1C1E32;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to top, #F4F5F8, #1C1E32);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to top, #F4F5F8, #1C1E32)
+    /* fallback for old browsers */
+    /*background: #fbc2eb;*/
+    /* Chrome 10-25, Safari 5.1-6 */
+    /*background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));*/
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))*/
+}

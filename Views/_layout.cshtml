@@ -10,10 +10,11 @@
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
-
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
@@ -38,6 +39,7 @@
             </div>
             <div class="col-md-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
+                    Renter
                     <a class="text-body px-3" href="https://www.facebook.com">
                         <i class="fab fa-facebook-f"></i>
                     </a>
@@ -70,25 +72,26 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="@Url.Action("Index","Home")" class="nav-item nav-link active">Home</a>
-                        <a href="@Url.Action("About","Home")" class="nav-item nav-link">About</a>
-                        <a href="@Url.Action("services","Home")" class="nav-item nav-link">Service</a>
+                        <a href="@Url.Action("Index","Renter")" class="nav-item nav-link active">Home</a>
+                        <a href="@Url.Action("About","Renter")" class="nav-item nav-link">About</a>
+                        <a href="@Url.Action("services","Renter")" class="nav-item nav-link">Service</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="@Url.Action("Cars","Home")" class="dropdown-item">Car Listing</a>
-                                <a href="@Url.Action("CarDetail","Home")" class="dropdown-item">Car Detail</a>
-                                <a href="@Url.Action("Booking","Home")" class="dropdown-item">Car Booking</a>
+                                <a href="@Url.Action("Cars","Renter")" class="dropdown-item">Car Listing</a>
+                                <a href="@Url.Action("CarDetail","Renter")" class="dropdown-item">Car Detail</a>
+                                <a href="@Url.Action("Booking","Renter")" class="dropdown-item">Car Booking</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="@Url.Action("Team","Home")" class="dropdown-item">The Team</a>
-                                <a href="@Url.Action("Testimonial","Home")" class="dropdown-item">Testimonial</a>
+                                <a href="@Url.Action("Team","Renter")" class="dropdown-item">The Team</a>
+                                <a href="@Url.Action("Testimonial","Renter")" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="@Url.Action("Contact","Home")" class="nav-item nav-link">Contact</a>
+                        <a href="@Url.Action("Contact","Renter")" class="nav-item nav-link">Contact</a>
+                        <a href="@Url.Action("UserProfile","Account")" class="nav-item nav-link"><box-icon name='user' type='solid' color="#ffffff" animation='burst-hover'></box-icon></a>
                     </div>
                 </div>
             </nav>
@@ -96,54 +99,7 @@
     </div>
     <!-- Navbar End -->
 
-    @using (@Html.BeginForm("Search", "Home"))
-    {
-        <!-- Search Start -->
-        <div class="container-fluid bg-white pt-3 px-lg-5">
-            <div class="row mx-n2">
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select class="custom-select px-4 mb-3" style="height: 50px;">
-                        <option selected>Pickup Location</option>
-                        <option value="1">Location 1</option>
-                        <option value="2">Location 2</option>
-                        <option value="3">Location 3</option>
-                    </select>
-                </div>
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select class="custom-select px-4 mb-3" style="height: 50px;">
-                        <option selected>Drop Location</option>
-                        <option value="1">Location 1</option>
-                        <option value="2">Location 2</option>
-                        <option value="3">Location 3</option>
-                    </select>
-                </div>
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <div class="date mb-3" id="date" data-target-input="nearest">
-                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Date"
-                               data-target="#date" data-toggle="datetimepicker" />
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <div class="time mb-3" id="time" data-target-input="nearest">
-                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Time"
-                               data-target="#time" data-toggle="datetimepicker" />
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <select class="custom-select px-4 mb-3" style="height: 50px;">
-                        <option selected>Select A Car</option>
-                        <option value="1">Car 1</option>
-                        <option value="2">Car 1</option>
-                        <option value="3">Car 1</option>
-                    </select>
-                </div>
-                <div class="col-xl-2 col-lg-4 col-md-6 px-2">
-                    <button class="btn btn-primary btn-block mb-3" type="submit" style="height: 50px;">Search</button>
-                </div>
-            </div>
-        </div>
-    }
-    <!-- Search End -->
+
 
     @RenderBody();
     <!-- Footer Start -->
